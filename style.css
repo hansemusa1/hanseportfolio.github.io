@@ -2,78 +2,58 @@
 
 /* --- Global Styles --- */
 body {
-    font-family: 'Open Sans', Arial, sans-serif; /* Modern sans-serif */
-    margin: 0;
-    padding: 0;
-    line-height: 1.6;
-    background: linear-gradient(120deg, #1f1f1f, #121212); /* Dark modern gradient */
+    background-color: #111;
     color: #eee;
-    transition: background 0.3s ease; /* smooth hover transitions for future effects */
 }
 
-/* --- Header --- */
-header {
-    background: #0d0d0d;
+#projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+.project {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.project img, .project video {
+    width: 100%;
+    display: block;
+    border-radius: 10px;
+}
+
+/* Hover overlay */
+.project::after {
+    content: attr(data-title);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    background: rgba(0,0,0,0.7);
     color: #fff;
-    padding: 40px 20px;
-    text-align: center;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-    font-family: 'Cinzel', serif; /* Nice contrast font for header */
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
 
-header h1 {
-    margin: 0;
-    font-size: 2.5rem;
-    letter-spacing: 2px;
+.project:hover::after {
+    opacity: 1;
 }
-
-/* --- Navigation --- */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background: #111;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+}
 nav a {
     color: #fff;
-    margin: 0 15px;
+    margin-left: 20px;
     text-decoration: none;
-    font-weight: 600;
-    transition: color 0.2s ease;
-}
-
-nav a:hover {
-    color: #ff6f61; /* Pop of color on hover */
-}
-
-/* --- Sections --- */
-section {
-    padding: 60px 20px;
-}
-
-/* --- Project Cards --- */
-.project {
-    background: #1e1e1e;
-    padding: 20px;
-    margin-bottom: 30px;
-    border-radius: 10px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.5);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.project:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 25px rgba(0,0,0,0.7);
-}
-
-/* --- Videos --- */
-video {
-    width: 100%;
-    max-width: 600px;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.4);
-}
-
-/* --- Footer --- */
-footer {
-    background: #0d0d0d;
-    color: #ccc;
-    text-align: center;
-    padding: 20px;
-    font-size: 0.9rem;
+    font-weight: 500;
 }
