@@ -1,66 +1,57 @@
 /* --- Global Styles --- */
 body {
+    margin: 0;
     background-color: #111;
     color: #eee;
     font-family: 'Open Sans', sans-serif;
-    margin: 0;
-    padding-top: 120px; /* offset for fixed header */
     line-height: 1.6;
 }
 
 /* --- Header --- */
 header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    position: relative;
+    padding: 20px;
     text-align: center;
-    padding: 20px 40px;
     background: #111;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 100;
-    border-bottom: 1px solid #222;
 }
 
-header h1 {
+.header-top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.name {
     font-family: 'Cinzel', serif;
-    margin: 0;
     font-size: 2rem;
+    font-weight: 600;
 }
 
-header p {
-    margin: 5px 0 15px 0;
-    font-size: 1rem;
-    color: #aaa;
+.header-icons {
+    position: absolute;
+    top: 0;
+    right: 20px;
 }
 
-nav a {
+.header-icons a {
     color: #fff;
-    margin: 0 10px;
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s ease;
+    margin-left: 15px;
+    font-size: 1.2rem;
+    transition: color 0.3s;
 }
 
-nav a:hover {
+.header-icons a:hover {
     color: #f0f0f0;
 }
 
-/* --- Sections --- */
-section {
-    max-width: 1000px;
-    margin: 40px auto;
-    padding: 0 20px;
-}
-
-section h2 {
-    font-family: 'Cinzel', serif;
-    font-size: 1.8rem;
-    margin-bottom: 20px;
-    border-bottom: 2px solid #444;
-    display: inline-block;
-    padding-bottom: 5px;
+.about-me {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: #aaa;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* --- Projects Grid --- */
@@ -68,31 +59,18 @@ section h2 {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
+    padding: 20px;
 }
 
 .project {
     position: relative;
     overflow: hidden;
     border-radius: 10px;
+    cursor: pointer;
     background: #1a1a1a;
-    padding: 15px;
-    cursor: default; /* remove clickable cursor */
 }
 
-.project h3 {
-    margin-top: 0;
-    font-size: 1.2rem;
-    margin-bottom: 5px;
-}
-
-.project p {
-    font-size: 0.9rem;
-    color: #ccc;
-    margin-bottom: 10px;
-}
-
-/* Image and Video Styles */
-.project img,
+/* Project Video */
 .project video {
     width: 100%;
     display: block;
@@ -100,48 +78,31 @@ section h2 {
     transition: transform 0.3s ease;
 }
 
-.project:hover img,
 .project:hover video {
     transform: scale(1.05);
 }
 
-/* Hover overlay */
+/* Hover overlay with title and year */
 .project::after {
     content: attr(data-title);
     position: absolute;
-    inset: 0; /* cover entire project */
+    left: 0;
+    bottom: -100%;
+    width: 100%;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0.7);
     color: #fff;
+    font-weight: 600;
+    padding: 10px;
+    transition: bottom 0.3s ease, opacity 0.3s ease;
     opacity: 0;
-    transition: opacity 0.3s ease;
-    padding: 20px;
 }
 
 .project:hover::after {
+    bottom: 0;
     opacity: 1;
-}
-
-/* --- Contact Section --- */
-#contact a {
-    color: #fff;
-    text-decoration: underline;
-}
-
-#contact a:hover {
-    color: #f0f0f0;
-}
-
-/* --- Footer --- */
-footer {
-    text-align: center;
-    padding: 20px;
-    background: #111;
-    border-top: 1px solid #222;
-    margin-top: 40px;
-    font-size: 0.9rem;
-    color: #aaa;
 }
