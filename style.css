@@ -1,51 +1,77 @@
+/* --- Global Styles --- */
 body {
-  background: red;
-}
-
-
-body {
-    font-family: Arial, sans-serif;
+    font-family: 'Open Sans', Arial, sans-serif; /* Modern sans-serif */
     margin: 0;
     padding: 0;
     line-height: 1.6;
-    background-color: #f4f4f4;
-    color: #333;
-  }
-  
-  header {
-    background-color: #222;
+    background: linear-gradient(120deg, #1f1f1f, #121212); /* Dark modern gradient */
+    color: #eee;
+    transition: background 0.3s ease; /* smooth hover transitions for future effects */
+}
+
+/* --- Header --- */
+header {
+    background: #0d0d0d;
     color: #fff;
-    padding: 20px;
+    padding: 40px 20px;
     text-align: center;
-  }
-  
-  nav a {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    font-family: 'Cinzel', serif; /* Nice contrast font for header */
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+}
+
+/* --- Navigation --- */
+nav a {
     color: #fff;
-    margin: 0 10px;
+    margin: 0 15px;
     text-decoration: none;
-  }
-  
-  section {
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+nav a:hover {
+    color: #ff6f61; /* Pop of color on hover */
+}
+
+/* --- Sections --- */
+section {
+    padding: 60px 20px;
+}
+
+/* --- Project Cards --- */
+.project {
+    background: #1e1e1e;
     padding: 20px;
-  }
-  
-  .project {
-    background: #fff;
-    padding: 15px;
-    margin-bottom: 20px;
-    border-radius: 5px;
-  }
-  
-  video {
+    margin-bottom: 30px;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 25px rgba(0,0,0,0.7);
+}
+
+/* --- Videos --- */
+video {
     width: 100%;
     max-width: 600px;
     height: auto;
-  }
-  
-  footer {
-    background: #222;
-    color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+}
+
+/* --- Footer --- */
+footer {
+    background: #0d0d0d;
+    color: #ccc;
     text-align: center;
-    padding: 10px;
-  }
-  
+    padding: 20px;
+    font-size: 0.9rem;
+}
