@@ -1,3 +1,7 @@
+body {
+    background-color: hotpink !important;
+}
+
 /* --- Global Styles --- */
 body {
     font-family: 'Open Sans', Arial, sans-serif; /* Modern sans-serif */
