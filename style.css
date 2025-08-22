@@ -1,13 +1,7 @@
 body {
-  font-family: 'Open Sans', sans-serif;
-  background-color: #111;
-  color: #eee;
+  background: red;
 }
 
-h1, h2, h3 {
-  font-family: 'Cinzel', serif;
-  letter-spacing: 2px;
-}
 
 body {
     font-family: Arial, sans-serif;
